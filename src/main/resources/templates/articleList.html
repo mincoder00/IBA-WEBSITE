@@ -85,6 +85,13 @@
         .list-group-item a:hover {
             text-decoration: underline; /* 링크에 마우스 올렸을 때 밑줄 추가 */
         }
+        /* 로그아웃 버튼을 페이지 최하단 중앙에 배치 */
+        .logout-container {
+            display: flex;
+            justify-content: center;
+            margin-top: auto; /* 상단 여백을 자동으로 조정하여 페이지 하단으로 이동 */
+            margin-bottom: 50px; /* 페이지 하단과의 간격을 조정 */
+        }
     </style>
 </head>
 <body>
@@ -186,6 +193,10 @@
             </div>
         </div>
     </div>
+    <div class="logout-container">
+        <button type="button" class="btn btn-secondary" id="logout-btn">로그아웃</button>
+    </div>
+    <script src="/js/token.js"></script>
     <script src="/js/article.js"></script>
 </div>
 </body>

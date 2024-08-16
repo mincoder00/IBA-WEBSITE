@@ -38,8 +38,12 @@ public class Article {
     @Column(name = "category")
     private String category;
 
+    @Column(name= "author", nullable=false)
+    private String author;
+
     @Builder
-    public Article(String title, String content, String category) {
+    public Article(String author, String title, String content, String category) {
+        this.author = author;
         this.title = title;
         this.content = content;
         this.category = category;
