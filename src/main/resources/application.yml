@@ -15,10 +15,7 @@ spring:
     oauth2:
       client:
         registration:
-          google:
-            scope:
-              - email
-              - profile
+
 jwt:
   issuer: ajufresh@gmail.com
   secret_key: study-springboot
