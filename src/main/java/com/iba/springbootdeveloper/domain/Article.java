@@ -41,12 +41,16 @@ public class Article {
     @Column(name= "author", nullable=false)
     private String author;
 
+    @Column(name= "nickname", nullable = false)
+    private String nickname;
+
     @Builder
-    public Article(String author, String title, String content, String category) {
+    public Article(String author, String title, String content, String category, String nickname) {
         this.author = author;
         this.title = title;
         this.content = content;
         this.category = category;
+        this.nickname = nickname;
     }
 
     public void update(String title, String content, String category) {

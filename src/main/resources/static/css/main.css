@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background: #1565C0;
+    position: sticky;
+    top: 0px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px; /* 원하는 만큼의 패딩을 추가 */
+    margin: 0 18rem 0 18rem;
+}
+
+.logo {
+    max-height: 50px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.menu, .member {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    flex: 1;
+    justify-content: center;
+}
+
+.menu li {
+    margin: 0 16px; /* 좌우로 15px의 마진 추가 */
+}
+
+
+.member li {
+    margin-left: 15px;
+}
+
+
+.menu li a, .member li a {
+    font-family: 'Pretendard';
+    font-weight: 200;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* 첫번째 페이지 */
+.section1{
+    height: 850px;
+    width: 100%;
+    background-color: #1565C0;
+}
+
+.info-contents{
+    margin-left: 18rem;
+    padding: 0.1px;
+}
+
+.info-contents > h1 {
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-size: 70px;
+    color: #FFFFFF;
+    margin-left: 5px;
+    margin-top: 600px;
+}
+
+.info-contents > h2 {
+    font-family: 'Pretendard';
+    font-weight: 300;
+    font-size: 40px;
+    color: #FFFFFF;
+    margin-left: 5px;
+}
+
+.info-contents > hr {
+    width: 350px;
+    margin-top: 5px;
+}
+
+/* 두번째 페이지 */
+.section2{
+    height: 920px;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.info-contents2{
+    margin-left: 18rem;
+    padding: 0.1px;
+}
+
+.info-contents2 > p {
+    color: #1565C0;
+    font-family: 'Pretendard';
+    font-weight: 200;
+    font-size: 18px;
+    margin-top: 183px;
+}
+
+.info-contents2 > h1 {
+    font-family: 'Pretendard';
+    font-weight: 200;
+    font-size: 35px;
+    margin-top: 50px;
+}
+
+.info-contents2 > h1 > span{
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-size: 35px;
+    margin-top: 50px;
+    color: #1565C0;
+}
+
+.info-contents2 > h3 {
+    font-family: 'Pretendard';
+    font-weight: 200;
+    font-size: 20px;
+    margin-top: 350px;
+    line-height: 150%;
+}
+
+.info-contents2 > h3 > span{
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 242px;
+    line-height: 150%;
+    color: #1565C0;
+}
+
+.labtop {
+    float: right;
+    margin-right: 18rem;
+    position: relative;
+    bottom: 130px;
+}
+
+/* 세번째 페이지 */
+.section3 {
+    height: 920px;
+    width: 100%;
+    background-color: #1565C0;
+    padding: 0.1px;
+}
+
+.section3 > p {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-left: 18rem;
+    margin-top: 145px;
+}
+
+.awards-container {
+    display: flex;
+    overflow: hidden; /* 스크롤바를 없앱니다 */
+    white-space: nowrap;
+    padding: 10px;
+    cursor: grab; /* 마우스 커서를 드래그 아이콘으로 바꿉니다 */
+    margin-left: 18rem;
+    margin-top: 61px;
+}
+
+.box {
+    min-width: 369px;
+    height: 529px;
+    margin-right: 67px;
+    background-color: #FFFFFF;
+    flex-shrink: 0;
+}
+
+.box > h3 {
+    margin-left: 40px;
+    margin-top: 34px;
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.box > ul {
+    margin-top: 35px;
+    margin-left: 40px;
+}
+
+.box > ul > li {
+    list-style-type: none;
+    margin-bottom: 18px;
+    font-family: 'Pretendard';
+    font-weight: 200;
+    font-size: 15px;
+}
+
+/* 네번째 페이지 */
+.section4 {
+    height: 920px;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 0.1px;
+}
+
+.section4 > p {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 150%;
+    color: #1565C0;
+    margin-left: 18rem;
+    margin-top: 145px;
+}
+
+.course-container {
+    max-width: 1340px;
+    display: flex;
+    margin : 1px;
+    height: 530px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 61px;
+    margin-left: 18rem;
+}
+
+.course-container > div {
+    min-width: 400px;
+    height: 527px;
+    background-color: #D6EAF8;
+    display: inline-block;
+    text-align: center;
+}
+
+.course-container > div > h1 {
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 150%;
+    color: #000000;
+    margin-top: 80px;
+}
+
+.course-container > div > h2 {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: #000000;
+    margin-top: 18px;
+}
+
+.course-container > div > hr {
+    width: 70%;
+    margin: 21px auto 40px auto;
+}
+
+.course-container > div > h3 {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000000;
+    margin-top: 18px;
+    margin-bottom: 13px;
+}
+
+.course-container > div > p {
+    font-family: 'Pretendard';
+    font-weight: 200;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 13px;
+}
+
+/* 다섯번째 페이지 */
+.section5 {
+    height: 920px;
+    width: 100%;
+    background-color: #1565C0;
+    padding: 0.1px;
+}
+
+.section5 > p {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-left: 18rem;
+    margin-top: 145px;
+}
+
+.activity-container {
+    display: flex;
+    overflow: hidden; /* 스크롤바를 없앱니다 */
+    white-space: nowrap;
+    padding: 10px;
+    cursor: grab; /* 마우스 커서를 드래그 아이콘으로 바꿉니다 */
+    margin-left: 18rem;
+    margin-top: 61px;
+}
+
+.activity-container > .box > h1 {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+.activity-container > .box > p {
+    font-family: 'Pretendard';
+    font-weight: 300;
+    font-size: 18px;
+    margin-top: 16px;
+    margin-left: 15px;
+}
+
+
+/* 여섯번째 페이지 */
+.section6 {
+    height: 620px;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 0.1px;
+}
+
+.section6 > p {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 150%;
+    color: #1565C0;
+    margin-left: 18rem;
+    margin-top: 145px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between; /* 자식 요소들을 양 끝에 배치 */
+    align-items: center; /* 자식 요소들을 수직 중앙 정렬 */
+    padding: 1px;
+    margin: 60px 18rem 0 18rem
+}
+
+.email,
+.instagram {
+    width: 566px;
+    height: 200px;
+    background-color: #1565C0;
+    display: inline-block;
+}
+
+.contact-container > div > h1 {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-size: 30px;
+    color: #FFFFFF;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.contact-container > div > h2 {
+    font-family: 'Pretendard';
+    font-weight: 300;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 316px;
+    background-color: #1F2025;
+}
+
+logout {
+    color: white;
+}

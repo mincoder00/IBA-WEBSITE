@@ -1,22 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
 <head>
-    <meta charset="UTF-8">
     <title>Project</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <style>
-        .pagination-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .header-bg {
-            background-color: #021026; /* 게시판 상단 색상 설정 */
-            color: #ffffff; /* 기본 텍스트 색상 설정 */
-        }
-        .header-bg h5 {
-            color: #000000; /* "Intelligent Business Analytics" 텍스트 색상 검정으로 변경 */
-        }
         .table thead th {
             background-color: #021026; /* 테이블 헤더 배경색 변경 */
             color: #ffffff; /* 테이블 헤더 텍스트 색상 변경 */
@@ -42,7 +29,7 @@
         }
         .table td:nth-child(2),
         .table th:nth-child(2) {
-            width: 55%; /* 제목 열 너비 */
+            width: 45%; /* 제목 열 너비 */
         }
         .table td:nth-child(3),
         .table th:nth-child(3) {
@@ -52,24 +39,10 @@
         .table th:nth-child(4) {
             width: 15%; /* 작성일시 열 너비 */
         }
-        /* Flexbox 스타일 */
-        .container {
-            display: flex;
-            flex-direction: row;
-            margin-top: 10%;
+        .table td:nth-child(5),
+        .table th:nth-child(5) {
+            width: 10%; /* 작성자 */
         }
-        .container .content {
-            flex: 3;
-        }
-        .container .sidebar {
-            flex: 1;
-            padding-left: 20px;
-            margin-top: auto; /* 상단 여백을 자동으로 조정하여 아래쪽으로 이동 */
-            margin-bottom: 30%; /* 페이지 하단과의 간격을 조정 */
-            display: flex;
-            flex-direction: column;
-        }
-
          .list-group-item {
             padding: 5px 7px; /* 패딩을 더 줄여서 크기 조정 */
         }
@@ -84,13 +57,6 @@
         }
         .list-group-item a:hover {
             text-decoration: underline; /* 링크에 마우스 올렸을 때 밑줄 추가 */
-        }
-        /* 로그아웃 버튼을 페이지 최하단 중앙에 배치 */
-        .logout-container {
-            display: flex;
-            justify-content: center;
-            margin-top: auto; /* 상단 여백을 자동으로 조정하여 페이지 하단으로 이동 */
-            margin-bottom: 50px; /* 페이지 하단과의 간격을 조정 */
         }
     </style>
 </head>
@@ -125,8 +91,9 @@
                     <tr>
                         <th>번호</th>
                         <th>제목</th>
-                        <th>구분</th> <!-- 구분 칼럼을 작성일시 앞에 추가 -->
-                        <th>작성일시</th> <!-- 작성일시 칼럼을 마지막에 배치 -->
+                        <th>구분</th>
+                        <th>작성일시</th>
+                        <th>작성자</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -138,6 +105,7 @@
                         </td>
                         <td th:text="${item.category}"></td> <!-- 구분에 카테고리 데이터 출력 -->
                         <td th:text="${#temporals.format(item.createdAt, 'yyyy-MM-dd')}"></td> <!-- 작성일시 데이터 출력 -->
+                        <td th:text =${item.nickname}></td>
                     </tr>
                     </tbody>
                 </table>
@@ -193,11 +161,7 @@
             </div>
         </div>
     </div>
-    <div class="logout-container">
-        <button type="button" class="btn btn-secondary" id="logout-btn">로그아웃</button>
-    </div>
     <script src="/js/token.js"></script>
-    <script src="/js/article.js"></script>
 </div>
 </body>
 </html>

@@ -1,6 +1,8 @@
 package com.iba.springbootdeveloper.service;
 
 import com.iba.springbootdeveloper.domain.Article;
+import com.iba.springbootdeveloper.domain.Role;
+import com.iba.springbootdeveloper.domain.User;
 import com.iba.springbootdeveloper.dto.AddArticleRequest;
 import com.iba.springbootdeveloper.dto.UpdateArticleRequest;
 import com.iba.springbootdeveloper.repository.BlogRepository;
@@ -15,6 +17,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
@@ -25,9 +28,22 @@ import java.util.List;
 @Service
 public class BlogService {
     private final BlogRepository blogRepository;
+    private final UserService userService;
 
     public Article save(AddArticleRequest request, String userName) {
-        return blogRepository.save(request.toEntity(userName));
+
+        authorizeManager();
+
+        String nickname = userService.getNicknameByEmail(userName);
+        Article article = Article.builder()
+                .title(request.getTitle())
+                .content(request.getContent())
+                .category(request.getCategory())
+                .author(userName)
+                .nickname(nickname)
+                .build();
+        blogRepository.save(article);
+        return article;
     }
 
     public List<Article> findAll() {
@@ -43,7 +59,7 @@ public class BlogService {
         Article article = blogRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("not found : " + id));
 
-        authorizeArticleAuthor(article);
+        authorizeArticleAccess(article);
         blogRepository.delete(article);
     }
 
@@ -63,7 +79,8 @@ public class BlogService {
             if (keyword != null && !keyword.isEmpty()) {
                 predicates.add(cb.or(
                         cb.like(root.get("title"), "%" + keyword + "%"),
-                        cb.like(root.get("content"), "%" + keyword + "%")
+                        cb.like(root.get("content"), "%" + keyword + "%"),
+                        cb.equal(root.get("nickname"), keyword)
                 ));
             }
 
@@ -79,15 +96,37 @@ public class BlogService {
     public Article update(long id, UpdateArticleRequest request) {
         Article article = blogRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
-        authorizeArticleAuthor(article);
+        authorizeArticleAccess(article);
         article.update(request.getTitle(), request.getContent(), request.getCategory());
         return article;
     }
 
-    private static void authorizeArticleAuthor(Article article) {
-        String userName = SecurityContextHolder.getContext().getAuthentication().getName();
-        if (!article.getAuthor().equals(userName)) {
+    private void authorizeArticleAccess(Article article) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String userName = authentication.getName();
+        User user = userService.findByEmail(userName);
+
+        // Admins have full access to all articles
+        if (user.getRole() == Role.ADMIN) {
+            return; // Admins are authorized
+        }
+
+        // Managers can access their own articles
+        if (user.getRole() == Role.MANAGER && article.getAuthor().equals(userName)) {
+            return; // Manager is authorized for their own articles
+        }
+
+        // Throw an exception if neither condition is met
+        throw new IllegalArgumentException("not authorized");
+    }
+
+    public void authorizeManager() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String userName = authentication.getName();
+        User user = userService.findByEmail(userName);
+        if (user.getRole() != Role.MANAGER && user.getRole() != Role.ADMIN ) {
             throw new IllegalArgumentException("not authorized");
         }
     }
+
 }

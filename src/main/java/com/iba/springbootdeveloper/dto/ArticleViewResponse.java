@@ -1,12 +1,13 @@
 package com.iba.springbootdeveloper.dto;
 
 import com.iba.springbootdeveloper.domain.Article;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-    @NoArgsConstructor
+@NoArgsConstructor
 @Getter
 public class ArticleViewResponse {
 
@@ -18,6 +19,7 @@ public class ArticleViewResponse {
     private String category;
     private String author;
 
+    @Builder
     public ArticleViewResponse(Article article){
         this.id= article.getId();
         this.title= article.getTitle();

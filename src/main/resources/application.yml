@@ -1,4 +1,12 @@
 spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    spring-security:
+      enabled: true
   jpa:
     show-sql: true
     properties:
@@ -15,7 +23,14 @@ spring:
     oauth2:
       client:
         registration:
-
+          google:
+            client-id: 659399037862-0lvqom2roru2k900uut6pcngqqt0af6d.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
 jwt:
   issuer: ajufresh@gmail.com
   secret_key: study-springboot
+admin:
+  email: pnuiba514@gmail.com

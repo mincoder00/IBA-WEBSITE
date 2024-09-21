@@ -3,7 +3,9 @@ package com.iba.springbootdeveloper.controller;
 import com.iba.springbootdeveloper.domain.Article;
 import com.iba.springbootdeveloper.dto.ArticleViewResponse;
 import com.iba.springbootdeveloper.service.BlogService;
+import com.iba.springbootdeveloper.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 @Controller
 public class BlogViewController {
-
+    @Autowired
+    private UserService userService;
     private final BlogService blogService;
 
     @GetMapping("/articles")
@@ -48,9 +51,10 @@ public class BlogViewController {
     @GetMapping("/articles/{id}")
     public String getArticle(@PathVariable("id") Long id, Model model) {
         Article article = blogService.findById(id);
+        String nickname = userService.getNicknameByEmail(article.getAuthor());
         model.addAttribute("article", new ArticleViewResponse(article));
         model.addAttribute("category", article.getCategory());
-
+        model.addAttribute("nickname", nickname);
         return "article";
     }
 

@@ -1,12 +1,171 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
 <head>
-    <meta charset="UTF-8">
-    <title>About</title>
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>landing_page</title>
 </head>
 <body>
 <div layout:fragment="content">
-동아리 소개 페이지
+    <div class="section1">
+        <div class="info-contents">
+            <h1>IBA</h1>
+            <h2>PNU Business School<br>
+                Intelligent Business Analytics</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="section2">
+        <div class="info-contents2">
+            <p>&lt;ABOUT US &gt;</p>
+            <h1>지능형 경영분석 동아리<br><span>IBA</span>는</h1>
+            <img src="/images/labtop.png" class="labtop">
+            <h3><span>Intelligent Business Analytics</span>의 약자로,<br>
+                빅데이터를 이용한 비즈니스 애널리틱스에<br>
+                인공지능을 접목한 지능형 경영분석을 학습하는 동아리입니다.</h3>
+        </div>
+    </div>
+
+    <div class="section3">
+        <p>AWARDS</p>
+        <div class="awards-container">
+            <div class="box">
+                <h3>2024</h3>
+                <ul>
+                    <li>제14회 DB금융경제 공모전 장려상, 가작</li>
+                    <li>금융위원회 D-테스트베드 상반기 참가팀 선정</li>
+                    <li>핀테크 챌린지 경상권 우수상</li>
+                    <li>대학생 ERP 아이디어 공모전 장려상</li>
+                    <li>2024 해운대구 빅데이터 아이디어 공모전 장려상</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>2023</h3>
+                <ul>
+                    <li>신한AI, 보다 나은 금융 생활을 위한<br>AI 서비스 아이디어 경진대회 최우수상</li>
+                    <li>금융위원회 D-테스트베드 상반기 참가팀 선정</li>
+                    <li>부산대학교 핀테크융합전공 연구 아이디어<br>경진대회 대상, 최우수상, 우수상</li>
+                    <li>미래내일 일경험 청년 주도 프로젝트 우수상</li>
+                    <li>FSI Data Challenger 금융보안원 원장상</li>
+                    <li>삼성화재 리스크분석경진대회 장려상</li>
+                    <li>NH 투자증권 빅데이터 경진대회 우수상</li>
+                    <li>리튼 Generation AI Ideation 2023 2등상</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>2022</h3>
+                <ul>
+                    <li>서울시 산업사회 혁신 프로젝트 공모전 우수상</li>
+                    <li>제12회 DB 금융경제 공모전 입상</li>
+                    <li>한국경영정보학회 대학생 아이디어 공모전<br>대상, 우수상</li>
+                    <li>제1회 KBX 금융 빅데이터 활용 아이디어 경진대회<br>우수상</li>
+                    <li>NICE D&B 비재무 데이터를 활용한 중소기업<br>휴/폐업 예측 챌린지 공모전 대상</li>
+                    <li>핀테크융합전공 사업모델 아이디어 경진대회<br>우수상</li>
+                    <li>부산 가명정보 활용센터 연계 프로젝트 진행</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>2021</h3>
+                <ul>
+                    <li>한국경영정보학회 춘계 대학생 아이디어 공모전<br>우수상</li>
+                    <li>제9회 공공데이터활용 비즈니스 아이디어 공모전 <br>장려상</li>
+                    <li>한국경영정보학회 추계 대학생 아이디어 공모전<br>장려상</li>
+                    <li>디지털 산업 혁신 빅데이터 플랫폼 활용<br>금융아이디어 경진대회 우수상</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>2020</h3>
+                <ul>
+                    <li>제1회 인공지능 응용경진대회 장려상</li>
+                    <li>대학생 ICT 융합 프로젝트 경진대회 우수상</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section4">
+        <p>COURSE</p>
+        <div class="course-container">
+            <div class="study">
+                <h1>교육세션</h1>
+                <h2>기초 분석 방법론<br>머신러닝 기초<br>토이 프로젝트</h2>
+                <hr>
+                <p>1회차 : 파이썬 문법 및 기초 라이브러리 학습</p>
+                <p>2회차 : 데이터 시각화, EDA, FE 학습</p>
+                <p>3회차 : 통계 기초, 데이터 전처리 학습</p>
+                <p>4회차 : 머신러닝 분류 학습 및 프로젝트 진행</p>
+                <p>5회차 : 머신러닝 회귀 학습 및 프로젝트 진행</p>
+            </div>
+            <div class="vacation">
+                <h1>방학 중 스터디</h1>
+                <h2>교육세션 중 배운 내용을 심화하고 <br>새로운 데이터 분석 지식 습득</h2>
+                <br>
+                <hr>
+                <h3>데이터 분석 책을 기반으로 한 스터디 진행</h3>
+                <p>핵심 인사이트 도출을 위한 데이터 시각화 학습</p>
+                <p>실제 데이터 분석에 사용되는 통계기법 학습</p>
+                <p>머신러닝의 작동원리 학습 및 모델링 실습</p>
+                <p>딥러닝 기초</p>
+            </div>
+            <div class="team-project">
+                <h1>정규세션</h1>
+                <h2><br>팀 빌딩 및 프로젝트 진행<br><br></h2>
+                <hr>
+                <p>관심 분야에 따른 팀 구성</p>
+                <p>주제 선정부터 데이터 분석 및 결과물 도출까지 진행</p>
+                <p>중간 발표를 통해 점검 및 피드백 공유</p>
+                <p>피드백을 수렴한 최종 결과 발표</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section5">
+        <p>ACTIVITY</p>
+        <div class="activity-container">
+            <div class="box">
+                <img class="box-image" src="/images/education.png">
+                <h1>교육세션</h1>
+                <p>커리큘럼에 따라 이전 기수가<br>현재 기수에게 교육 진행</p>
+            </div>
+            <div class="box">
+                <img class="box-image" src="/images/study.png">
+                <h1>스터디</h1>
+                <p>특정 주제나 목표를 중심으로 팀을 꾸려<br>진행하는 스터디</p>
+            </div>
+            <div class="box">
+                <img class="box-image" src="/images/senior.png">
+                <h1>선배님 특강</h1>
+                <p>진학 또는 취업한 선배님들과 진행하는<br>특강 및 질의 응답</p>
+            </div>
+            <div class="box">
+                <img class="box-image" src="/images/act.png">
+                <h1>대외활동</h1>
+                <p>AI 관련 봉사활동, 부스 운영 등<br>다양한 외부 활동 진행</p>
+            </div>
+            <div class="box">
+                <img class="box-image" src="/images/friend.png">
+                <h1>친목활동</h1>
+                <p>MT, 회식 등 동아리원들과 친목 도모</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section6">
+        <p>CONTACT</p>
+        <div class="contact-container">
+            <div class="email" onclick="window.open('mailto:pnuiba514@gmail.com')" style="cursor: pointer;">                <h1>E-MAIL</h1>
+                <h2>pnuiba514@gamil.com</h2>
+            </div>
+            <div class="instagram" onclick="window.open('https://www.instagram.com/pnu_iba/');" style="cursor: pointer;">
+                <h1>INSTAGRAM</h1>
+                <h2>@pnu_iba</h2>
+            </div>
+        </div>
+    </div>
+    <footer>
+    </footer>
+    <script src="/js/script.js"></script>
 </div>
 </body>
 </html>

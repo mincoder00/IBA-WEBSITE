@@ -1,7 +1,0 @@
-.navbar-blue {
-    background-color:  #021026; /* 원하는 파란색의 HEX 코드 */
-}
-select#category {
-  position: relative;
-  z-index: 1000;
-}

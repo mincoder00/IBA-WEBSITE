@@ -102,27 +102,6 @@ if (createButton) {
     });
 }
 
-// 로그아웃 기능
-const logoutButton = document.getElementById('logout-btn');
-
-if (logoutButton) {
-    logoutButton.addEventListener('click', event => {
-        function success() {
-            // 로컬 스토리지에 저장된 액세스 토큰을 삭제
-            localStorage.removeItem('access_token');
-
-            // 쿠키에 저장된 리프레시 토큰을 삭제
-            deleteCookie('refresh_token');
-            location.replace('/about');
-        }
-        function fail() {
-            alert('로그아웃 실패했습니다.');
-        }
-
-        httpRequest('DELETE','/api/refresh-token', null, success, fail);
-    });
-}
-
 // 쿠키를 가져오는 함수
 function getCookie(key) {
     var result = null;

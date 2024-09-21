@@ -29,25 +29,30 @@ public class User implements UserDetails {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "nickname", unique = true)
+    @Column(name = "nickname")
     private String nickname;
 
     @Builder
-    public User(String email, String password, String nickname) {
+    public User(String email, String password, String nickname, Role role) {
         this.email = email;
         this.password = password;
         this.nickname = nickname;
+        this.role = role;
     }
 
-    public User update(String nickname){
+    public User update(String nickname) {
         this.nickname = nickname;
         return this;
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("user"));
+    public void updateRole(Role role) {
+        this.role = role;
     }
+
+    @Getter
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
+    private Role role;
 
     @Override
     public String getUsername() {
@@ -58,6 +63,7 @@ public class User implements UserDetails {
     public String getPassword() {
         return password;
     }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -76,6 +82,12 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        String authority = "ROLE_" + this.role.name();
+        return List.of(new SimpleGrantedAuthority(authority));
     }
 
 }
