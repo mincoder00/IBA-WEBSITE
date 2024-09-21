@@ -24,13 +24,13 @@ spring:
       client:
         registration:
           google:
-            client-id: 659399037862-0lvqom2roru2k900uut6pcngqqt0af6d.apps.googleusercontent.com
-            client-secret: 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
+            client-id:
+            client-secret:
             scope:
               - email
               - profile
 jwt:
   issuer: ajufresh@gmail.com
-  secret_key: study-springboot
+  secret_key:
 admin:
   email: pnuiba514@gmail.com
