@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.8/static/pretendard.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard';
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #1a237e;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .faq-section {
+            margin-bottom: 40px;
+        }
+
+        .faq-section h2 {
+            font-size: 1.5em;
+            color: #303f9f;
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8eaf6;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .question:before {
+            content: "Q";
+            position: absolute;
+            left: 0;
+            color: #3f51b5;
+            font-weight: bold;
+        }
+
+        .answer {
+            color: #424242;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .answer:before {
+            content: "A";
+            position: absolute;
+            left: 0;
+            color: #f50057;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: #e8eaf6;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px 15px;
+            }
+
+            .faq-item {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="content" layout:fragment="content">
+    <h1>자주 묻는 질문</h1>
+
+    <div class="faq-section">
+        <h2>지원 관련</h2>
+        <div class="faq-item">
+            <div class="question">선발 시기는 언제인가요?</div>
+            <div class="answer">1년에 2회 1월, 7월 경 선발 예정입니다. 상세 일정은 추후 에브리타임, 인스타그램을 참고해주세요.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">선발 인원은 몇 명인가요?</div>
+            <div class="answer">15명 내외로 선발 예정입니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">경쟁률은 어떻게 되나요?</div>
+            <div class="answer">기수 별 평균 경쟁률은 <span class="highlight">2.5 : 1</span> 정도입니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">지원 시 학년도 영향이 있을까요?</div>
+            <div class="answer">학년은 평가요소에 해당되지 않습니다. 하지만, 학술 동아리인 만큼 1학년은 적으며, 2, 3, 4학년이 골고루 분포하고 있습니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">졸업생이거나 대학원생도 지원 가능한가요?</div>
+            <div class="answer">2학기 동안 활동이 가능하다면 문제없습니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">방학 때 개인 일정으로 교육세션에 참여하지 못할 것 같습니다. 이 경우 지원 가능한가요?</div>
+            <div class="answer">학기 중에 참여 가능하시면 지원 가능합니다! 방학 중 대면 참가가 불가능하시면 줌 강의와 제공되는 과제를 통해 참여해주시면 됩니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">개인 일정으로 인해 마감 기한을 넘기고 신청서를 제출했어요. 늦었지만 해당 신청서를 받아 주실 수 있나요?</div>
+            <div class="answer">형평성 문제로 인해, 늦게 제출하신분들은 모두 지원받지 않기로 결정하였습니다. 많은 관심과 열정을 보여주신 분들이기에 저희도 정말 아쉽지만, 다음 기수 모집 때 다시 한 번 지원해주시면 감사하겠습니다.</div>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <h2>면접 관련</h2>
+        <div class="faq-item">
+            <div class="question">면접을 진행하는 시간대는 어떻게 되나요?</div>
+            <div class="answer">오후 1시 ~ 오후 6시 사이로 시간이 배정될 계획입니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">면접 진행 방식과 예상 소요 시간이 어떻게 되나요?</div>
+            <div class="answer">면접은 다대일 방식으로 진행되며, <span class="highlight">10~15분</span> 동안 이루어집니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">면접 때 어떤 내용을 물어보시나요?</div>
+            <div class="answer">지원서 기반으로 진행될 예정입니다. 활동할 동아리 부원을 찾는 과정인만큼 궁금한 점들을 질문할 것입니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">면접 장소는 어디인가요?</div>
+            <div class="answer">부산대학교 경영관 강의실에서 진행할 계획입니다. 일정상의 문제로 장소가 바뀔 수도 있어, 정확한 장소는 서류 합격 문자와 같이 안내될 예정입니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">대면으로 면접이 불가능할 경우, 비대면 면접도 가능한가요?</div>
+            <div class="answer">피치 못할 사정으로 참석이 불가능한 분들을 위해 따로 줌으로 면접을 진행하고 있습니다. 그러나 대면보다는 의사소통에 어려움이 있어 불리하게 작용할 수도 있다는 점 참고해주시기 바랍니다.</div>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <h2>활동 관련</h2>
+        <div class="faq-item">
+            <div class="question">파이썬, 데이터 분석에 대해 잘 몰라도 동아리 활동에 큰 지장이 없을까요?</div>
+            <div class="answer">IBA의 커리큘럼은 입문자를 기준으로 구성되어 있어, 기초부터 학습하게 됩니다. 또한 학습을 위한 부가 자료들도 공유하고 있어 의지만 있으시다면 활동을 따라가는데 문제 없다고 생각합니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">교육세션은 어떤 방식으로 진행되나요?</div>
+            <div class="answer">커리큘럼에 따라서 전 기수 동아리원이 진행합니다. 개념 설명과 실습을 통해 학습하며, 각 차수에 따른 개인 과제/팀 과제가 있을 계획입니다.</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

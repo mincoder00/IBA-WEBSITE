@@ -1,9 +1,46 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
 <head>
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <title>landing_page</title>
+    <title>IBA</title>
+    <style>
+        .mark {
+            float: right;
+            margin-right: 18rem;
+            position: relative;
+            bottom: 0px;  /* bottom 값을 100px에서 50px로 변경하여 아래로 내림 */
+        }
+        /* Enable horizontal scrolling for awards and activity sections */
+        .awards-container,
+        .activity-container {
+            display: flex;
+            overflow-x: auto; /* Enable horizontal scroll */
+            gap: 1rem; /* Maintain spacing between boxes */
+            scroll-snap-type: x mandatory; /* Smooth snap on scroll for better touch experience */
+        }
+
+        .awards-container .box,
+        .activity-container .box {
+            flex: 0 0 auto; /* Set boxes to align horizontally */
+            scroll-snap-align: start; /* Snap each box to the start of the viewport */
+        }
+
+        /* Optional: Custom scrollbar styling */
+        .awards-container::-webkit-scrollbar,
+        .activity-container::-webkit-scrollbar {
+            height: 8px; /* Adjust scrollbar height */
+        }
+
+        .awards-container::-webkit-scrollbar-thumb,
+        .activity-container::-webkit-scrollbar-thumb {
+            background-color: #cccccc; /* Thumb color */
+            border-radius: 4px; /* Rounded scrollbar edges */
+        }
+
+        .awards-container::-webkit-scrollbar-track,
+        .activity-container::-webkit-scrollbar-track {
+            background-color: #f0f0f0; /* Track color */
+        }
+    </style>
 </head>
 <body>
 <div layout:fragment="content">
@@ -15,12 +52,11 @@
             <hr>
         </div>
     </div>
-
     <div class="section2">
         <div class="info-contents2">
             <p>&lt;ABOUT US &gt;</p>
             <h1>지능형 경영분석 동아리<br><span>IBA</span>는</h1>
-            <img src="/images/labtop.png" class="labtop">
+            <img src="/images/iba-removebg.png" class="mark">
             <h3><span>Intelligent Business Analytics</span>의 약자로,<br>
                 빅데이터를 이용한 비즈니스 애널리틱스에<br>
                 인공지능을 접목한 지능형 경영분석을 학습하는 동아리입니다.</h3>
@@ -30,7 +66,7 @@
     <div class="section3">
         <p>AWARDS</p>
         <div class="awards-container">
-            <div class="box">
+            <div class="box" id="year-2024">
                 <h3>2024</h3>
                 <ul>
                     <li>제14회 DB금융경제 공모전 장려상, 가작</li>
@@ -40,7 +76,7 @@
                     <li>2024 해운대구 빅데이터 아이디어 공모전 장려상</li>
                 </ul>
             </div>
-            <div class="box">
+            <div class="box" id="year-2023">
                 <h3>2023</h3>
                 <ul>
                     <li>신한AI, 보다 나은 금융 생활을 위한<br>AI 서비스 아이디어 경진대회 최우수상</li>
@@ -53,7 +89,7 @@
                     <li>리튼 Generation AI Ideation 2023 2등상</li>
                 </ul>
             </div>
-            <div class="box">
+            <div class="box" id="year-2022">
                 <h3>2022</h3>
                 <ul>
                     <li>서울시 산업사회 혁신 프로젝트 공모전 우수상</li>
@@ -65,7 +101,7 @@
                     <li>부산 가명정보 활용센터 연계 프로젝트 진행</li>
                 </ul>
             </div>
-            <div class="box">
+            <div class="box" id="year-2021">
                 <h3>2021</h3>
                 <ul>
                     <li>한국경영정보학회 춘계 대학생 아이디어 공모전<br>우수상</li>
@@ -74,7 +110,7 @@
                     <li>디지털 산업 혁신 빅데이터 플랫폼 활용<br>금융아이디어 경진대회 우수상</li>
                 </ul>
             </div>
-            <div class="box">
+            <div class="box" id="year-2020">
                 <h3>2020</h3>
                 <ul>
                     <li>제1회 인공지능 응용경진대회 장려상</li>
@@ -154,7 +190,8 @@
     <div class="section6">
         <p>CONTACT</p>
         <div class="contact-container">
-            <div class="email" onclick="window.open('mailto:pnuiba514@gmail.com')" style="cursor: pointer;">                <h1>E-MAIL</h1>
+            <div class="email" style="cursor: pointer;">
+                <h1>E-MAIL</h1>
                 <h2>pnuiba514@gamil.com</h2>
             </div>
             <div class="instagram" onclick="window.open('https://www.instagram.com/pnu_iba/');" style="cursor: pointer;">
@@ -163,8 +200,6 @@
             </div>
         </div>
     </div>
-    <footer>
-    </footer>
     <script src="/js/script.js"></script>
 </div>
 </body>

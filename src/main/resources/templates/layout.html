@@ -1,15 +1,34 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" style="zoom: 0.8;">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/font.css">
+    <style>
+        header{
+            background: #1565C0;
+            position: sticky;
+            top: 0px;
+            height: 71px;
+        }
+
+        /* 추가적인 모바일 대응이 필요한 경우 */
+        @media screen and (max-width: 1024px) {
+            html {
+		min-width: 1024px;
+		overflow-x: auto;
+                transform: scale(0.8);
+                transform-origin: top left;
+            }
+        }
+    </style>
 </head>
 <body>
 <nav th:replace="~{navbar :: navbarFragment}"></nav>
 <th:block layout:fragment="content"></th:block>
 <script src="/js/loginCheck.js"></script>
 <script src="/js/article.js"></script>
+<script src= "/js/token.js"></script>
 </body>
 </html>

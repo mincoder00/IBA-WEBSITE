@@ -1,51 +1,26 @@
-
-<!--    <div class="container-fluid">-->
-<!--        <a class="navbar-brand" href="/about">Home</a>-->
-<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"-->
-<!--                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--            <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
-<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-<!--            <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#">모집안내</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="/articles">프로젝트</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#">F&Q</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item" id="authLink">-->
-<!--                    &lt;!&ndash; 로그인/로그아웃 링크가 여기에 동적으로 삽입됩니다 &ndash;&gt;-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <script src="/js/loginCheck.js"></script>-->
-<!--</nav>-->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <nav>
 <header th:fragment="navbarFragment">
     <div class="container">
-        <img src="/images/IBA Logo.svg" class="logo" alt="Logo">
-            <ul class="menu">
-                <li class="active"><a href="/about">Home</a></li>
-                <li class="recruit"><a href="#">모집안내</a></li>
-                <li class="project"><a href="/articles">프로젝트</a>
-                </li><li class="cafe"><a href="https://www.naver.com/">카페</a></li>
-                <li class="project"><a href="#">F&Q</a></li>
+        <a href="/">
+            <img src="/images/IBA Logo.svg" class="logo" alt="Logo">
+        </a>
+        <ul class="menu">
+                <li class="active"><a href="/">HOME</a></li>
+                <li class="project"><a href="/articles">PROJECT</a>
+                <li class="project"><a href="https://few-play-e97.notion.site/IBA-bece9763d72f4d8a8fe76e7bf8058c69?pvs=4" target="_blank">NOTION</a>
+                <li class="recruit"><a href="/recruit">RECRUIT</a></li>
+                <li class="project"><a href="/faq">F&Q</a></li>
             </ul>
 
             <ul class="member">
                 <li class="nav-item" id="authLink"> </li>
                 <li class="nav-item">
-                    <a href="/adminLogin">유저 관리</a>
+                    <a href="/adminLogin">ADMIN</a>
                 </li>
             </ul>
     </div>
     <hr>
 </header>
-    <script src="/js/loginCheck.js"></script>
 </nav>

@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const authLink = document.getElementById('authLink');
 
     if (isUserLoggedIn()) {
-        authLink.innerHTML = '<a class="nav-link" id="logout">로그아웃</a>';
+        authLink.innerHTML = '<a class="nav-link" id="logout">LOGOUT</a>';
         const logoutButton = document.getElementById('logout');
 
         if (logoutButton) {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // 쿠키에 저장된 리프레시 토큰을 삭제
                     deleteCookie('refresh_token');
-                    location.replace('/about');
+                    location.replace('/');
                 }
                 function fail() {
                     alert('로그아웃 실패했습니다.');
@@ -28,6 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     } else {
-        authLink.innerHTML = '<a class="nav-link" href="/login">로그인</a>';
+        authLink.innerHTML = '<a class="nav-link" href="/login">LOGIN</a>';
     }
 });

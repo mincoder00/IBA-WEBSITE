@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class UserService {
@@ -46,5 +48,8 @@ public class UserService {
         user.updateRole(Role.MANAGER);
         // 업데이트된 사용자 저장
         userRepository.save(user);
+    }
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 }

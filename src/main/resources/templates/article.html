@@ -2,42 +2,141 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
 <head>
     <meta charset="UTF-8">
-    <title>Project</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>Project Detail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           font-family: 'Pretendard';
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        article{
+            margin-top: 100px;
+        }
+
+        .article-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .article-header {
+            margin-bottom: 3rem;
+             background: transparent; /* 배경색 완전히 제거 */
+        }
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            background: none;  /* 배경색 제거 */
+        }
+
+        .article-meta {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            margin-top: 30px;
+        }
+
+        .article-content {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            background: #fff;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #f8f9fa;
+            border-color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .article-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 <div layout:fragment="content">
-    <div class="p-5 mb-5 text-center bg-light">
-        <h1 class="mb-3">PROJECT ARCHIVE</h1>
-        <h4 class="mb-3">Intelligent Business Analytics</h4>
-    </div>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-lg-8">
-                <article>
-                    <input type="hidden" id="article-id" th:value="${article.id}">
-                    <header class="mb-4">
-                        <h1 class="fw-bolder mb-1" th:text="${article.title}"></h1>
-                        <div class="text-muted fst-italic mb-2" th:text="|Posted on ${#temporals.format(article.createdAt, 'yyyy-MM-dd HH:mm')} By ${nickname}|"></div>
-                        <div class="text-muted mb-2" th:text="|수정 일시 ${#temporals.format(article.updatedAt, 'yyyy-MM-dd HH:mm')}|"></div>
-                    </header>
-                    <section class="mb-5">
-                        <span class="badge bg-primary fs-5 mb-4" th:text="${article.category}"></span>
-                    </section>
-                    <section class="mb-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text" th:utext="${article.content}"></p>
-                            </div>
-                        </div>
-                    </section>
-                    <button type="button" id="modify-btn"
-                            th:onclick="|location.href='@{/new-article?id={articleId}(articleId=${article.id})}'|"
-                            class="btn btn-primary btn-sm">수정</button>
-                    <button type="button" id="delete-btn" class="btn btn-secondary btn-sm">삭제</button>
-                </article>
+    <div class="article-container">
+        <article>
+            <input type="hidden" id="article-id" th:value="${article.id}">
+
+            <header class="article-header">
+                <h1 class="article-title" th:text="${article.title}"></h1>
+                <div class="article-meta" th:text="|Posted on ${#temporals.format(article.createdAt, 'yyyy-MM-dd HH:mm')} By ${nickname}|"></div>
+                <div class="article-meta" th:text="|Last modified date ${#temporals.format(article.updatedAt, 'yyyy-MM-dd HH:mm')}|"></div>
+            </header>
+
+            <div class="category-badge" th:text="${article.category}"></div>
+
+            <div class="article-content">
+                <p class="card-text" th:utext="${article.content}"></p>
             </div>
-        </div>
+
+            <div class="button-group">
+                <button type="button" id="modify-btn"
+                        th:onclick="|location.href='@{/new-article?id={articleId}(articleId=${article.id})}'|"
+                        class="btn">수정</button>
+                <button type="button" id="delete-btn" class="btn">삭제</button>
+            </div>
+        </article>
     </div>
 </div>
 </body>

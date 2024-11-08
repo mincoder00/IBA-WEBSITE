@@ -67,7 +67,7 @@ public class BlogService {
     public Page<Article> getList(int page, String kw, String category) {
         List<Sort.Order> sorts = new ArrayList<>();
         sorts.add(Sort.Order.desc("createdAt"));
-        Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));
+        Pageable pageable = PageRequest.of(page, 6, Sort.by(sorts));
         Specification<Article> spec = search(kw, category);
         return blogRepository.findAll(spec, pageable);
     }
