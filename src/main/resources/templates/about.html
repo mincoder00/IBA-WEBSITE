@@ -11,15 +11,18 @@
         }
         /* Enable horizontal scrolling for awards and activity sections */
         .awards-container,
-        .activity-container {
+        .activity-container,
+         .course-container{
             display: flex;
             overflow-x: auto; /* Enable horizontal scroll */
             gap: 1rem; /* Maintain spacing between boxes */
             scroll-snap-type: x mandatory; /* Smooth snap on scroll for better touch experience */
+            overflow-y: hidden;
         }
 
         .awards-container .box,
-        .activity-container .box {
+        .activity-container .box,
+         .course-container{
             flex: 0 0 auto; /* Set boxes to align horizontally */
             scroll-snap-align: start; /* Snap each box to the start of the viewport */
         }
@@ -31,13 +34,16 @@
         }
 
         .awards-container::-webkit-scrollbar-thumb,
-        .activity-container::-webkit-scrollbar-thumb {
+        .activity-container::-webkit-scrollbar-thumb,
+        .course-container
+         {
             background-color: #cccccc; /* Thumb color */
             border-radius: 4px; /* Rounded scrollbar edges */
         }
 
         .awards-container::-webkit-scrollbar-track,
-        .activity-container::-webkit-scrollbar-track {
+        .activity-container::-webkit-scrollbar-track,
+         .course-container{
             background-color: #f0f0f0; /* Track color */
         }
     </style>

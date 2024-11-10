@@ -37,3 +37,4 @@ function enableDragScroll(containerSelector) {
 // 'awards-container'와 'activity-container'에 드래그 스크롤 기능을 적용
 enableDragScroll('.awards-container');
 enableDragScroll('.activity-container');
+enableDragScroll('.course-container');
